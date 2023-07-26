@@ -1,3 +1,3 @@
 package net.flow9.thisiskotlin.kinberger
 
-class Menu(val name: String, val price: Int, val introduce: String)
+data class Menu(val num:Int, val name: String, val price: Int, val introduce: String)
