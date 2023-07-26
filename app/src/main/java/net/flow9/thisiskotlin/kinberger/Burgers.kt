@@ -12,9 +12,9 @@ class Burgers : Item() {
     override fun displayInfo() {
         println("[ Burgers MENU ]")
         for (menu in burgerList) {
-            println("${menu.num}. ${menu.name.padEnd(18)} | ${menu.price} | ${menu.introduce}")
+            println("${menu.num}. ${menu.name.padEnd(18)} | W ${"%.1f".format(menu.price.toDouble() / 1000)} | ${menu.introduce}")
         }
-        println("0. ${"뒤로가기".padEnd(15)} |  뒤로가기")
+        println("0. ${"뒤로가기".padEnd(15)} | 뒤로가기")
     }
 
     override fun function() {
