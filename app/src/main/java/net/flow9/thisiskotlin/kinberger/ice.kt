@@ -1,4 +1,4 @@
-//package com.example.forezen_custard
+//package net.flow9.thisiskotlin.kinberger
 //
 //open class Item(var name:String, var price:Int)
 //
