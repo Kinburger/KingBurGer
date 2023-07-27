@@ -37,6 +37,7 @@ class Play {
                         }
                         2 -> {
                             forzenCustard.displayInfo()
+                            forzenCustard.function()
                             return run()
                         }
                         3 -> {
