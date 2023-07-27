@@ -34,12 +34,12 @@ class Beer : Item() {
                             println("\n\"${menu.name.padEnd(18)} 의 도수는 5.5~7.5 입니다.")
                             println("도수를 선택 해 주세요")
                             val al = readLine()!!.toDouble()
-                            while (true){if(al <= 5.5 || al > 7.5){
+                            if(al <= 5.5 || al > 7.5){
                                 println("다시 입력 해 주세요")
                             }
                             else{
                                 println("도수 ${al}를 선택 하셨습니다.")
-                            }}
+                            }
                         }
                         3 ->{
                             println("\n\"${menu.name.padEnd(18)} 의 도수는 5.5 한가지 입니다.")
