@@ -38,13 +38,13 @@ class ForzenCustard : Item() {
                                     }else {
                                         when(selects1){
                                             1 -> {
-                                                val cart = Cart()
+
                                                 val forzencart=forzencustardList[selects-1]
-                                                cart.addmenus(Menu(forzencart.num,forzencart.name,forzencart.price,forzencart.introduce))
+                                               Cart.addmenus(Menu(forzencart.num,forzencart.name,forzencart.price,forzencart.introduce))
                                                 println("${forzencart.name}메뉴가 장바구니에 추가되었습니다.\n")
 
                                                 println("▼장바구니 목록\n")
-                                                for(cart in cart.menus){
+                                                for(cart in Cart.menus){
                                                     println("${cart.name.padEnd(15)} ${cart.price} ${cart.introduce.padStart(15)}")
                                                 }
                                                 return
