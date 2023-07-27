@@ -10,6 +10,8 @@ class Play {
     )
     val burgers = Burgers()
     val forzenCustard = ForzenCustard()
+    val drinks = Drinks()
+    var beer = Beer()
     fun run(){
         println("SHAKESHACK BURGER 에 오신걸 환영합니다.")
         println("▼ 아래 메뉴판을 보시고 메뉴를 골라 입력해주세요.\n[ SHAKESHACK MENU ]")
@@ -33,6 +35,16 @@ class Play {
                         }
                         2 -> {
                             forzenCustard.displayInfo()
+                            return run()
+                        }
+                        3 -> {
+                            drinks.displayInfo()
+                            return run()
+                        }
+
+                        4 -> {
+                            beer.displayInfo()
+                            beer.function()
                             return run()
                         }
                         0 -> {
