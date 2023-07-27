@@ -4,11 +4,12 @@ class ForzenCustard : Item() {
     val icemeun: MutableList<Menu> = mutableListOf(
         Menu(1,"소프트 콘\t\t", 2000, "부드러운 아이스크림"),
         Menu(2,"쉐이크\t\t\t", 2500, "섞어먹는 아이스크림"),
-        Menu(3,"구슬아이스크림\t\t", 2500, "방울방울 아이스크림"),
+        Menu(3,"구슬아이스크림\t", 2500, "방울방울 아이스크림"),
         Menu(4,"젤라또\t\t\t", 3000, "꾸덕한 아이스크림")
     )
-    val selectedMenus: MutableList<Pair<Menu, String>> = mutableListOf()
-
+    companion object {
+        val selectedMenus: MutableList<Pair<Menu, String>> = mutableListOf()
+    }
 
     override fun displayInfo() {
         println("[ Frozen Custard MENU ]")
@@ -28,13 +29,13 @@ class ForzenCustard : Item() {
                 when (choice) {
                     1, 2, 3, 4 -> {
                         val selectedMenu = icemeun[choice - 1]
-                        println("메뉴: ${selectedMenu.name}, 가격: ${selectedMenu.price}원, 설명: ${selectedMenu.introduce}")
+                        println("메뉴: ${selectedMenu.name} 가격: ${selectedMenu.price}원 설명: ${selectedMenu.introduce}")
 
                         // 맛 선택
                         second@ while (true) {
                             try {
 
-                                println("맛을 선택하세요. [1] 초콜릿, [2] 바나나, [3] 딸기 [4]메론 [0]뒤로가기")
+                                println("맛을 선택하세요. [1] 초콜릿 [2] 바나나 [3] 딸기 [4]메론 [0]뒤로 가기")
                                 val flavorChoice = readLine()?.toInt()
                                 when (flavorChoice) {
 
@@ -106,7 +107,7 @@ class ForzenCustard : Item() {
 
                                             println("장바구니 목록")
                                             for ((menu, flavor) in selectedMenus) {
-                                                println("메뉴: ${menu.name}\t가격: ${menu.price}원\t설명: ${menu.introduce}\t맛: ${flavor}")
+                                                println("메뉴: ${menu.name}가격: ${menu.price}원\t\t설명: ${menu.introduce}\t맛: ${flavor}")
                                             }
                                             return Play().run()
                                         } else if (selec == 2) {

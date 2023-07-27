@@ -16,11 +16,9 @@ class Order: Item() {
                     when(y){
                         1 -> {
                             println("아래와 같이 주문 하시겠습니까?\n[ Orders ]")
-                            for(menu in Cart.menus){
-                                print("${menu.name.padEnd(20)}|${menu.price}|${menu.introduce.padStart(20)}")
+                            for ((menu, flavor) in ForzenCustard.selectedMenus) {
+                                println("메뉴: ${menu.name}가격: ${menu.price}원\t\t설명: ${menu.introduce}\t\t맛: ${flavor}")
                             }
-
-
                             println("[1]주문\t\t\t [2]메뉴판")
                             var add = 0
                             for (menuItem in Cart.menus) {
