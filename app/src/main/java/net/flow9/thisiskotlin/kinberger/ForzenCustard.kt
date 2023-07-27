@@ -108,9 +108,9 @@ class ForzenCustard : Item() {
                                             for (cart in Cart.menus) {
                                                 println("${cart.name} ${cart.price} ${cart.introduce}\n")
                                             }
-                                            return main()
+                                            return Play().run()
                                         } else if (selec == 2) {
-                                            return main()
+                                            return Play().run()
                                         } else {
                                             println("잘못 입력하셨습니다.")
                                             continue@fourth
@@ -134,7 +134,7 @@ class ForzenCustard : Item() {
                     }
 
                     0 -> {
-                        return main()
+                        return Play().run()
                     }
                     else -> {
                         println("잘못된 선택입니다. 번호를 다시 입력하세요.")
