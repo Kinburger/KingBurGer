@@ -90,7 +90,7 @@ class ForzenCustard : Item() {
                                 break
                             } else if (anotherChoice == 2) {
                                 for ((menu, flavor) in selectedMenus) {
-                                    println("메뉴: ${menu.name}, 가격: ${menu.price}원, 설명: ${menu.introduce}, 맛: $flavor")
+                                    println("메뉴: ${menu.name}\t가격: ${menu.price}원\t설명: ${menu.introduce}\t맛: ${flavor}")
                                 }
                                 println("위 메뉴를 장바구니에 추가하시겠습니까?")
                                 println("[1]확인                     [2]취소")
@@ -105,11 +105,12 @@ class ForzenCustard : Item() {
                                             println("메뉴가 장바구니에 추가되었습니다.\n")
 
                                             println("장바구니 목록")
-                                            for (cart in Cart.menus) {
-                                                println("${cart.name} ${cart.price} ${cart.introduce}\n")
+                                            for ((menu, flavor) in selectedMenus) {
+                                                println("메뉴: ${menu.name}\t가격: ${menu.price}원\t설명: ${menu.introduce}\t맛: ${flavor}")
                                             }
                                             return Play().run()
                                         } else if (selec == 2) {
+                                            println("메뉴판으로 이동합니다")
                                             return Play().run()
                                         } else {
                                             println("잘못 입력하셨습니다.")

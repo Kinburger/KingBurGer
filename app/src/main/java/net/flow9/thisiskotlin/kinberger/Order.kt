@@ -1,13 +1,11 @@
 package net.flow9.thisiskotlin.kinberger
 
-class Order: Item() {
+import kotlinx.coroutines.selects.select
 
+class Order: Item() {
     override fun function(){
-        for(menu in Cart.menus){
-            println("${menu.name.padEnd(20)}|${menu.price}|${menu.introduce.padStart(20)}")
-        }
-        println("▲위 메뉴를 장바구니에 추가하시겠습니까?")
-        println("[1]확인                     [2]취소")
+        println("[ORDER MENU]")
+        println("[1]order\t\t|\t장바구니를 확인 후 주문합니다.\n[2]Cancel\t\t|\t진행중인 주문을 취소합니다.")
         while (true) {
             try {
                 val x: String? = readLine()
@@ -19,8 +17,10 @@ class Order: Item() {
                         1 -> {
                             println("아래와 같이 주문 하시겠습니까?\n[ Orders ]")
                             for(menu in Cart.menus){
-                                println("${menu.name.padEnd(20)}|${menu.price}|${menu.introduce.padStart(20)}")
+                                print("${menu.name.padEnd(20)}|${menu.price}|${menu.introduce.padStart(20)}")
                             }
+
+
                             println("[1]주문\t\t\t [2]메뉴판")
                             var add = 0
                             for (menuItem in Cart.menus) {
@@ -28,6 +28,7 @@ class Order: Item() {
                             }
                             println("▶ 계산서 : 총 ${add}원 입니다.")
                             println("▶ 잔액${Cart.money}")
+
                             while (true) {
                                 try {
                                     val a: String? = readLine()
