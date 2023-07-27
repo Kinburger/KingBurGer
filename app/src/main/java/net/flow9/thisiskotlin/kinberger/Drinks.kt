@@ -6,6 +6,7 @@ class Drinks : Item() {
         Menu(1, "soda", 2000, "extreme! sparkling!"),
         Menu(2, "juice", 2000, "fresh! fruity!"),
         Menu(3, "coffee", 2000, "tasty! deep!"),
+        Menu(0,"",3,"")
     )
 
     override fun displayInfo() {
