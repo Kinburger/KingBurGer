@@ -20,19 +20,19 @@ class Drinks : Item() {
         while (true){
             val input = readLine()!!.toInt()
             when (input) {
-                in 1..5 -> {
+                in 1..3 -> {
                     val menu = drinkList[input - 1]
                     println("\n\"${menu.name.padEnd(18)} | ${menu.price} | ${menu.introduce}\"")
-                    //장바구니 화면 출력
+//장바구니 화면 출력
                     println(
                         "▲ 위 메뉴를 장바구니에 추가하시겠습니까?\n" +
-                                "1. 확인        2. 취소"
+                                "1. 확인 2. 취소"
                     )
-                    //입력 받기
+//입력 받기
                     val addCart = readLine()!!.toInt()
-                    //조건문
+//조건문
                     if (1 == addCart) {
-                        //실제로 장바구니 객체에 담는 기능
+//실제로 장바구니 객체에 담는 기능
                         println(
                             "\n${menu.name} 가 장바구니에 추가되었습니다.\n" +
                                     "\n" +
@@ -61,7 +61,7 @@ class Drinks : Item() {
                 }
 
                 0 -> {
-                    //이전 메인메뉴로 돌아가기
+//이전 메인메뉴로 돌아가기
                     return
                 }
 
