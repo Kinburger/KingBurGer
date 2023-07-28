@@ -9,7 +9,7 @@ object Cart : Item() {
         menus.add(menu)
     }
 
-//    fun addmenus1(menu: Menu) {
+    //    fun addmenus1(menu: Menu) {
 //        if (money >= menu.price) {
 //            Cart.menus1.add(menu)
 //            money -= menu.price

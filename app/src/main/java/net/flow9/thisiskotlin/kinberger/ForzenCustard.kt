@@ -10,7 +10,6 @@ class ForzenCustard : Item() {
     companion object {
         val selectedMenus: MutableList<Pair<Menu, String>> = mutableListOf()
     }
-
     override fun displayInfo() {
         println("[ Frozen Custard MENU ]")
         for (menu in icemeun) {
@@ -20,7 +19,6 @@ class ForzenCustard : Item() {
         }
         println("[0] 뒤로가기")
     }
-
     override fun function() {
         first@ while (true) {
             try {
@@ -120,23 +118,21 @@ class ForzenCustard : Item() {
 
                                     } catch (e: Exception) {
                                         println("잘못 입력하셨습니다.")
-
                                     }
                                 }
                             }
-                            else if (anotherChoice == 0)
-
+                            else if (anotherChoice == 0){
+                                return Play().run()
+                            }
                             else {
                                 println("잘못 입력하셨습니다 y 또는 n를 입력하세요.")
 
                                 continue@third
-
                             }
                         }
                     }
-
                     0 -> {
-                        return Play().run()
+                        return
                     }
                     else -> {
                         println("잘못된 선택입니다. 번호를 다시 입력하세요.")

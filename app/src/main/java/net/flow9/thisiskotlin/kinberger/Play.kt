@@ -32,47 +32,40 @@ class Play {
                         burgers.displayInfo()
                         burgers.function()
                         run()
-                        y = false
+                        break
                     }
 
                     2 -> {
                         forzenCustard.displayInfo()
                         forzenCustard.function()
-                        run()
-                        y = false
+                        break
                     }
-
                     3 -> {
                         drinks.displayInfo()
+                        drinks.function()
                         run()
-                        y = false
+                        break
                     }
-
                     4 -> {
                         beer.displayInfo()
                         beer.function()
                         run()
-                        y = false
+                        break
                     }
-
                     5 -> {
                         order.function()
-
-                    }
-
-                    0 -> {
-                        y= false
                         break
-
+                    }
+                    0 -> {
+                        println("종료합니다.")
+                        break
 //                        println("키오스크 종료")
-
-
-
                     }
                     else -> {
                         println("잘못된 번호를 입력했어요 다시 입력해주세요.")
                     }
                 }
+                break
 
 //                if (selects <= -1 || selects > 5) {
 //                    println("잘못된 번호를 입력했어요 다시 입력해주세요.")
