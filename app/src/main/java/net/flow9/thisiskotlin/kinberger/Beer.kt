@@ -1,7 +1,5 @@
 package net.flow9.thisiskotlin.kinberger
 
-package net.flow9.thisiskotlin.kinberger
-
 class Beer : Item() {
     val BeerList: MutableList<Menu> = mutableListOf(
         Menu("주류",1, "Pale Ale", 5000, "쌉싸름한 맛 도수: 4.2"),
@@ -77,7 +75,7 @@ class Beer : Item() {
                             println("\n${menu.name} 가 장바구니에 추가되었습니다.\n" + "\n" + "▼장바구니 목록")
                             val beercart = BeerList[input - 1]
                             Cart.addmenus(
-                                Menu(beercart.x, beercart.num, beercart.price, beercart.introduce)
+                                Menu(beercart.x, beercart.num,beercart.name, beercart.price, beercart.introduce)
                             )
                             for (cart in Cart.menus) {
                                 println(
