@@ -14,53 +14,109 @@ class Play {
     val drinks = Drinks()
     var beer = Beer()
     var order = Order()
-    fun run(){
+    var y = true
+    fun run() {
         println("\nSHAKESHACK BURGER 에 오신걸 환영합니다.")
         println("▼ 아래 메뉴판을 보시고 메뉴를 골라 입력해주세요.\n[ SHAKESHACK MENU ]\t ▶ 현재 잔액: ${Cart.money}")
-        for(mainlist in mainList){
+        for (mainlist in mainList) {
             println(mainlist.joinToString("  "))
         }
 
-        while(true){
+        while (y) {
             try {
                 val select: String? = readLine()
-                val selects =select?.toInt()?: -1
+                val selects = select?.toInt() ?: -1
 
-                if(selects<=-1 || selects> 5){
-                    println("잘못된 번호를 입력했어요 다시 입력해주세요.")
-                } else {
-                    when(selects){
-                        1 -> {
-                            burgers.displayInfo()
-                            burgers.function()
-                            return run()
-                        }
-                        2 -> {
-                            forzenCustard.displayInfo()
-                            forzenCustard.function()
-                            return run()
-                        }
-                        3 -> {
-                            drinks.displayInfo()
-                            return run()
-                        }
+                when (selects) {
+                    1 -> {
+                        burgers.displayInfo()
+                        burgers.function()
+                        run()
+                        y = false
+                    }
 
-                        4 -> {
-                            beer.displayInfo()
-                            beer.function()
-                            return run()
-                        }
-                        5 -> {
-                            order.function()
-                        }
-                        0 -> {
-                            println("키오스크 종료")
-                            break
-                        }
+                    2 -> {
+                        forzenCustard.displayInfo()
+                        forzenCustard.function()
+                        run()
+                        y = false
+                    }
+
+                    3 -> {
+                        drinks.displayInfo()
+                        run()
+                        y = false
+                    }
+
+                    4 -> {
+                        beer.displayInfo()
+                        beer.function()
+                        run()
+                        y = false
+                    }
+
+                    5 -> {
+                        order.function()
+
+                    }
+
+                    0 -> {
+                        y= false
+                        break
+
+//                        println("키오스크 종료")
+
+
+
+                    }
+                    else -> {
+                        println("잘못된 번호를 입력했어요 다시 입력해주세요.")
                     }
                 }
 
-            }catch (e:Exception){
+//                if (selects <= -1 || selects > 5) {
+//                    println("잘못된 번호를 입력했어요 다시 입력해주세요.")
+//                } else {
+//                    when (selects) {
+//                        1 -> {
+//                            burgers.displayInfo()
+//                            burgers.function()
+//                            return run()
+//                        }
+//
+//                        2 -> {
+//                            forzenCustard.displayInfo()
+//                            forzenCustard.function()
+//                            return run()
+//                        }
+//
+//                        3 -> {
+//                            drinks.displayInfo()
+//                            return run()
+//                        }
+//
+//                        4 -> {
+//                            beer.displayInfo()
+//                            beer.function()
+//                            return run()
+//                        }
+//
+//                        5 -> {
+//                            order.function()
+//
+//                        }
+//
+//                        0 -> {
+//                            break
+//                            println("키오스크 종료")
+//
+//                        }
+//
+//                    }
+//                    break
+//                }
+
+            } catch (e: Exception) {
                 println("잘못된 번호를 입력했어요 다시 입력해주세요.")
             }
         }

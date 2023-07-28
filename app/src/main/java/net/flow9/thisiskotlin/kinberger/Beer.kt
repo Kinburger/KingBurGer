@@ -2,11 +2,11 @@ package net.flow9.thisiskotlin.kinberger
 
 class Beer : Item() {
     val BeerList: MutableList<Menu> = mutableListOf(
-        Menu(1, "Pale Ale", 5000, "쌉싸름한 맛 도수: 4.2"),
-        Menu(2, "India Pale Ale", 6000, "진하고 강한 맛 도수: 5.5~7.5"),
-        Menu(3, "Weizen", 7000, "풍부한 과일향과 풍성한 거품 도수: 5.5"),
-        Menu(4, "Porter", 8000, "깊은 훈제향과 달콤한 맛 도수: 5.3"),
-        Menu(5, "Stout", 8000, "씁쓸하면서 맥주 본연의 맛 도수: 7")
+        Menu("주류",1, "Pale Ale", 5000, "쌉싸름한 맛 도수: 4.2"),
+        Menu("주류",2, "India Pale Ale", 6000, "진하고 강한 맛 도수: 5.5~7.5"),
+        Menu("주류",3, "Weizen", 7000, "풍부한 과일향과 풍성한 거품 도수: 5.5"),
+        Menu("주류",4, "Porter", 8000, "깊은 훈제향과 달콤한 맛 도수: 5.3"),
+        Menu("주류",5, "Stout", 8000, "씁쓸하면서 맥주 본연의 맛 도수: 7")
     )
 
     override fun displayInfo() {

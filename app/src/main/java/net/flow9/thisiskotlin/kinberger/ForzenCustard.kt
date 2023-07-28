@@ -2,10 +2,10 @@ package net.flow9.thisiskotlin.kinberger
 
 class ForzenCustard : Item() {
     val icemeun: MutableList<Menu> = mutableListOf(
-        Menu(1,"소프트 콘\t\t", 2000, "부드러운 아이스크림"),
-        Menu(2,"쉐이크\t\t\t", 2500, "섞어먹는 아이스크림"),
-        Menu(3,"구슬아이스크림\t", 2500, "방울방울 아이스크림"),
-        Menu(4,"젤라또\t\t\t", 3000, "꾸덕한 아이스크림")
+        Menu("아이스크림",1,"소프트 콘\t\t", 2000, "부드러운 아이스크림"),
+        Menu("아이스크림",2,"쉐이크\t\t\t", 2500, "섞어먹는 아이스크림"),
+        Menu("아이스크림",3,"구슬아이스크림\t", 2500, "방울방울 아이스크림"),
+        Menu("아이스크림",4,"젤라또\t\t\t", 3000, "꾸덕한 아이스크림")
     )
     companion object {
         val selectedMenus: MutableList<Pair<Menu, String>> = mutableListOf()
