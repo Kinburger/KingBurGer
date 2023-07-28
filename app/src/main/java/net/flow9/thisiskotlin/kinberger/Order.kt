@@ -1,5 +1,9 @@
 package net.flow9.thisiskotlin.kinberger
 
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 
 class Order : Item() {
@@ -42,10 +46,15 @@ class Order : Item() {
                                         if (Cart.money >= add) {
                                             when (b) {
                                                 1 -> {
-                                                    println("▶ 잔액${Cart.money}원 중 ${add}원 사용하여 구매 완료 했습니다.")
+                                                    println("▶ 잔액${Cart.money}원 중 ${add}원 사용하여 구매 하겠습니다.")
                                                     println("▶ 현재 잔액은 ${Cart.money - add}원 입니다.")
                                                     Cart.addMenus1()
-                                                    break
+                                                    var coro = GlobalScope.launch {
+                                                        delay(10000)
+                                                    }
+                                                    runBlocking { coro.join() }
+                                                    println("결제를 완료 했습니다.")
+                                                      return Play().run()
                                                 }
 
                                                 2 -> Play().run()
