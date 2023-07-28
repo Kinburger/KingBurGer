@@ -31,24 +31,28 @@ class Play {
                     1 -> {
                         burgers.displayInfo()
                         burgers.function()
-                        return run()
+                        run()
+                        y = false
                     }
 
                     2 -> {
                         forzenCustard.displayInfo()
                         forzenCustard.function()
-                        return run()
+                        run()
+                        y = false
                     }
 
                     3 -> {
                         drinks.displayInfo()
-                        return run()
+                        run()
+                        y = false
                     }
 
                     4 -> {
                         beer.displayInfo()
                         beer.function()
-                        return run()
+                        run()
+                        y = false
                     }
 
                     5 -> {
@@ -57,8 +61,11 @@ class Play {
                     }
 
                     0 -> {
+                        y= false
+                        break
+
 //                        println("키오스크 종료")
-                       y= false
+
 
 
                     }
