@@ -5,7 +5,6 @@ object Cart : Item() {
     val menus1: MutableList<Menu> = mutableListOf()
     var money: Int = 0
 
-
     fun addmenus(menu: Menu) {
         menus.add(menu)
     }
@@ -25,6 +24,8 @@ object Cart : Item() {
             if (money >= menuItem.price) {
                 Cart.menus1.add(menuItem)
                 money -= menuItem.price
+                Cart.menus.clear()
+                ForzenCustard.selectedMenus.clear()
 
             } else {
                 println("잔액은 ${money}원으로 ${menuItem.price - money}이 부족해서 주문할 수 없습니다.")

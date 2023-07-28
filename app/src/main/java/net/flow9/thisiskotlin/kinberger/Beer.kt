@@ -14,7 +14,7 @@ class Beer : Item() {
         for (menu in BeerList) {
             println("${menu.num}. ${menu.name.padEnd(18)} | W ${"%.1f".format(menu.price.toDouble() / 1000)} | ${menu.introduce}")
         }
-        println("0. ${"뒤로가기".padEnd(15)} | 뒤로가기")
+        println("0. ${"뒤로가기".padEnd(15)}")
     }
 
     override fun function() {
@@ -38,8 +38,8 @@ class Beer : Item() {
                                 while (true) {
                                     try {
                                         val als: String? = readLine()
-                                        val al = als?.toInt() ?: -1
-                                        if (al < 5.5 || al > 7.5) {
+                                        val al = als?.toDoubleOrNull() ?: -1.0
+                                        if (al >= 5.5 && al <= 7.5) {
                                             println("다시 선택해주세요")
                                         } else {
                                             println("도수 ${al}을 선택하셨습니다.")
