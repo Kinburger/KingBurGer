@@ -17,7 +17,7 @@ class Play {
     var y = true
     fun run() {
         println("\nSHAKESHACK BURGER 에 오신걸 환영합니다.")
-        println("▼ 아래 메뉴판을 보시고 메뉴를 골라 입력해주세요.\n[ SHAKESHACK MENU ]\t ▶ 현재 잔액: ${Cart.money}")
+        println("▼ 아래 메뉴판을 보시고 메뉴를 골라 입력해주세요.\n[ SHAKESHACK MENU ]}")
         for (mainlist in mainList) {
             println(mainlist.joinToString("  "))
         }
