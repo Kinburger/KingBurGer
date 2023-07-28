@@ -1,6 +1,6 @@
 package net.flow9.thisiskotlin.kinberger
 
-import kotlinx.coroutines.selects.select
+
 
 class Order : Item() {
     override fun function() {
@@ -17,7 +17,7 @@ class Order : Item() {
                         1 -> {
                             println("아래와 같이 주문 하시겠습니까?\n[ Orders ]")
                             for (common in Cart.menus) {
-                                if (!common.introduce.contains("아이스크림")) {
+                                if (common.x != "아이스크림") {
                                     println("메뉴: ${common.name}가격: ${common.price}원\t\t설명: ${common.introduce}")
                                 }
                             }
@@ -45,8 +45,7 @@ class Order : Item() {
                                                     println("▶ 잔액${Cart.money}원 중 ${add}원 사용하여 구매 완료 했습니다.")
                                                     println("▶ 현재 잔액은 ${Cart.money - add}원 입니다.")
                                                     Cart.addMenus1()
-
-                                                    Play().run()
+                                                    break
                                                 }
 
                                                 2 -> Play().run()
@@ -62,8 +61,8 @@ class Order : Item() {
                                     return Play().run()
                                 }
                             }
-
                             return
+
                         }
 
                         2 -> return Play().run()

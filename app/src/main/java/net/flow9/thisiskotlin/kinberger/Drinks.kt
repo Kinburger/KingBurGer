@@ -3,16 +3,15 @@ package net.flow9.thisiskotlin.kinberger
 class Drinks : Item() {
 
     val drinkList: MutableList<Menu> = mutableListOf(
-        Menu(1, "soda", 2000, "extreme! sparkling!"),
-        Menu(2, "juice", 2000, "fresh! fruity!"),
-        Menu(3, "coffee", 2000, "tasty! deep!"),
-        Menu(0,"",3,"")
+        Menu("음료수",1, "soda", 2000, "콜라, 사이다, 환타"),
+        Menu("음료수", 2,"juice", 2000, "포도주스, 오렌지주스, 사과주스"),
+        Menu("음료수", 3,"coffee", 2000, "아메리카노, 라떼"),
     )
 
     override fun displayInfo() {
-
-        for (beverage in drinkList) {
-            println("${beverage.num} | ${beverage.name.padEnd(10)} | ${beverage.price} | ${beverage.introduce.padStart(10)}")
+        println("[ Burgers MENU ]")
+        for (menu in drinkList) {
+            println("${menu.num}. ${menu.name.padEnd(18)} | W ${"%.1f".format(menu.price.toDouble() / 1000)} | ${menu.introduce}")
         }
 
 
