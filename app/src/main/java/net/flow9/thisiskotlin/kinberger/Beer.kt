@@ -1,5 +1,7 @@
 package net.flow9.thisiskotlin.kinberger
 
+package net.flow9.thisiskotlin.kinberger
+
 class Beer : Item() {
     val BeerList: MutableList<Menu> = mutableListOf(
         Menu("주류",1, "Pale Ale", 5000, "쌉싸름한 맛 도수: 4.2"),
@@ -18,11 +20,11 @@ class Beer : Item() {
     }
 
     override fun function() {
-        //메뉴 번호 입력을 받아야함
+//메뉴 번호 입력을 받아야함
         while (true) {
             try {
                 val input = readLine()!!.toInt()
-                //선택한 메뉴 보이게
+//선택한 메뉴 보이게
                 when (input) {
                     in 1..5 -> {
                         val menu = BeerList[input - 1]
@@ -40,13 +42,13 @@ class Beer : Item() {
                                         val als: String? = readLine()
                                         val al = als?.toDoubleOrNull() ?: -1.0
                                         if (al >= 5.5 && al <= 7.5) {
-                                            println("다시 선택해주세요")
-                                        } else {
                                             println("도수 ${al}을 선택하셨습니다.")
-
+                                            break
+                                        } else {
+                                            println("다시 선택해 주세요")
                                         }
-//                                        println("도수 ${al}를 선택 하셨습니다")
-//                                        break
+// println("도수 ${al}를 선택 하셨습니다")
+// break
                                     } catch (e: java.lang.NumberFormatException) {
                                         println("숫자를 입력하세요")
                                     }
@@ -65,17 +67,24 @@ class Beer : Item() {
                                 println("\n\"${menu.name.padEnd(18)} 의 도수는 7 입니다.")
                             }
                         }
-                        //장바구니 화면 출력
-                        println(
-                            "위 메뉴를 장바구니에 추가하시겠습니까?\n" +
-                                    "1. 확인        2. 취소"
-                        )
-                        //입력 받기
+//장바구니 화면 출력
+                        println("위 메뉴를 장바구니에 추가하시겠습니까?\n" + "1. 확인 2. 취소")
+//입력 받기
                         val addCart = readLine()!!.toInt()
-                        //조건문
+//조건문
                         if (1 == addCart) {
-                            //실제로 장바구니 객체에 담는 기능
-                            println("\n${menu.name} 가 장바구니에 추가되었습니다.\n")
+//실제로 장바구니 객체에 담는 기능
+                            println("\n${menu.name} 가 장바구니에 추가되었습니다.\n" + "\n" + "▼장바구니 목록")
+                            val beercart = BeerList[input - 1]
+                            Cart.addmenus(
+                                Menu(beercart.x, beercart.num, beercart.price, beercart.introduce)
+                            )
+                            for (cart in Cart.menus) {
+                                println(
+                                    "${cart.name.padEnd(15)} ${cart.price} ${cart.introduce.padStart(15)}"
+                                )
+                            }
+                            println("\n")
                         } else {
                             println("\n취소되었습니다.\n")
                         }
@@ -83,7 +92,7 @@ class Beer : Item() {
                     }
 
                     0 -> {
-                        //이전 메인메뉴로 돌아가기
+//이전 메인메뉴로 돌아가기
                         return
                     }
 
