@@ -48,13 +48,12 @@ class Order : Item() {
                                                 1 -> {
                                                     println("▶ 잔액${Cart.money}원 중 ${add}원 사용하여 구매 하겠습니다.")
                                                     println("▶ 현재 잔액은 ${Cart.money - add}원 입니다.")
-                                                    Cart.addMenus1()
-                                                    var coro = GlobalScope.launch {
-                                                        delay(10000)
+                                                    runBlocking {
+                                                        Delay()
                                                     }
-                                                    runBlocking { coro.join() }
+                                                    Cart.addMenus1()
                                                     println("결제를 완료 했습니다.")
-                                                      return Play().run()
+                                                    return Play().run()
                                                 }
 
                                                 2 -> Play().run()
@@ -83,4 +82,10 @@ class Order : Item() {
             }
         }
     }
+
+    suspend fun Delay() {
+        println("3초 후 주문이 완료됩니다.")
+        delay(3000)
+    }
 }
+
